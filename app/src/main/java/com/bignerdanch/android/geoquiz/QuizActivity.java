@@ -13,6 +13,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private static final String TAG = "QuizActivity";
     private static final String KEY_INDEX = "index";
+    private Button mRestartButton;
     private Button mTrueButton;
     private Button mFalseButton;
     private Button mPrevButton;
@@ -58,6 +59,14 @@ public class QuizActivity extends AppCompatActivity {
 
         });
 
+        mRestartButton = (Button) findViewById (R.id.restart_button);
+        mRestartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = (mCurrentIndex = 0) % mQuestionBank.length;
+                updateQuestion();
+            }
+        });
         mPrevButton = (Button) findViewById (R.id.prev_button);
         mPrevButton.setOnClickListener(new View.OnClickListener() {
             @Override
