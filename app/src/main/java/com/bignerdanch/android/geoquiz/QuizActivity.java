@@ -34,10 +34,10 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate(Bundle) called");
         setContentView(R.layout.activity_quiz);
-
         if (savedInstanceState != null) {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
         }
+
 
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
 
@@ -71,7 +71,8 @@ public class QuizActivity extends AppCompatActivity {
         mPrevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
+                if (mCurrentIndex >=1)mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
+                else mCurrentIndex = 5;
                 updateQuestion();
             }
                                        }
