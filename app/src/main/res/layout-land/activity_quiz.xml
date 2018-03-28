@@ -39,20 +39,17 @@
             android:text="@string/false_button" />
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/prev_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
-        android:text="PREV"
-        android:drawableLeft="@drawable/arrow_left"
-        android:drawablePadding="4dp"/>
-    <Button
+        android:src="@drawable/arrow_left"/>
+    <ImageButton
         android:id="@+id/next_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:text="@string/next_button"
-        android:drawableRight="@drawable/arrow_right"
-        android:drawablePadding="4dp"/>
+        android:src="@drawable/arrow_right"
+ />
 </FrameLayout>
